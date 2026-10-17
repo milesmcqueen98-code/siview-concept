@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Si View concept//RFP 2026-01//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:spooktacular-2026-session-1@siview-concept
+DTSTAMP:20261017T170000Z
+DTSTART:20261024T190000Z
+DTEND:20261024T201500Z
+SUMMARY:The Great Si View Spooktacular (Session 1)
+LOCATION:Si View Community Center\, 400 SE Orchard Drive\, North Bend\, WA 
+ 98045
+DESCRIPTION:Tickets required for ages 2 and up. Buy tickets in Dash under D
+ rop-In Events.
+END:VEVENT
+END:VCALENDAR
