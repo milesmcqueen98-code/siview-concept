@@ -229,6 +229,8 @@ html.in-frame .concept { display: none; }
 .card:hover .card-title a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 2px; }
 .card:focus-within { outline: 3px solid var(--ink); outline-offset: 2px; }
 
+.empty-note { padding: 16px 0; color: var(--ink-2); }
+
 /* Home: events and visit */
 .events-grid { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 48px; align-items: start; }
 .event-list { list-style: none; padding: 0; border-top: 1px solid var(--line); }

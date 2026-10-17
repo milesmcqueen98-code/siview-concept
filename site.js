@@ -130,6 +130,34 @@
     });
   });
 
+  /* ---------- Content that appears or expires on its own (Pacific dates, inclusive) ---------- */
+  var todayIso = pacificToday().iso;
+  function outOfWindow(el) {
+    var from = el.getAttribute('data-show-from');
+    var until = el.getAttribute('data-show-until');
+    return Boolean((from && todayIso < from) || (until && todayIso > until));
+  }
+  $$('[data-show-from], [data-show-until]').forEach(function (el) { el.hidden = outOfWindow(el); });
+  $$('[data-limit]').forEach(function (list) {
+    var max = parseInt(list.getAttribute('data-limit'), 10);
+    var shown = 0;
+    Array.prototype.forEach.call(list.children, function (item) {
+      if (outOfWindow(item)) { item.hidden = true; return; }
+      shown += 1;
+      item.hidden = shown > max;
+    });
+  });
+  $$('[data-empty]').forEach(function (list) {
+    var visible = Array.prototype.some.call(list.children, function (item) { return !item.hidden; });
+    if (!visible) {
+      var note = doc.createElement('p');
+      note.className = 'empty-note';
+      note.textContent = list.getAttribute('data-empty');
+      list.parentNode.insertBefore(note, list.nextSibling);
+      list.hidden = true;
+    }
+  });
+
   /* ---------- Alert bar ---------- */
   var alertEl = $('#alert');
   if (alertEl) {
